@@ -159,13 +159,7 @@ FOR EACH ROW
 
 BEGIN
     -- Cria um registro de auditoria no sistema
-    INSERT INTO LOG_SISTEMA
-    (
-        TABELA,
-        OPERACAO,
-        DATA_EVENTO,
-        DESCRICAO
-    )
+    INSERT INTO LOG_SISTEMA (TABELA, OPERACAO, DATA_EVENTO, DESCRICAO)
     VALUES
     (
         'PEDIDO',
@@ -269,8 +263,7 @@ FOR EACH ROW
 
 BEGIN
     -- Verifica os dados que estão chegando
-    IF NEW.VALOR_TOTAL IS NULL
-       OR NEW.VALOR_TOTAL <= 0 THEN
+    IF NEW.VALOR_TOTAL IS NULL OR NEW.VALOR_TOTAL <= 0 THEN
 
         -- Modifica o valor antes de salvar
         -- NEW permite alterar dados que ainda serão inseridos

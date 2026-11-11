@@ -132,12 +132,7 @@ TO 'financeiro'@'localhost';
 -- mas não precisa ver o estoque.
 -- ==========================================================
 
-GRANT SELECT
-(
-CODIGO,
-NOME,
-PRECO_BASE
-)
+GRANT SELECT (CODIGO, NOME, PRECO_BASE)
 ON supermercado.PRODUTO
 TO 'financeiro'@'localhost';
 
