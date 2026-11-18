@@ -237,9 +237,6 @@ CREATE TABLE IF NOT EXISTS MINHA_LISTA (
 
 START TRANSACTION;
 
--- ---------------------------------------------------------------------
--- 2.1 PLANO — 30 planos comerciais
--- ---------------------------------------------------------------------
 INSERT INTO PLANO (CODIGO, NOME_PLANO, DESCRICAO, PRECO, QUALIDADE_VIDEO, LIMITE_TELAS, PERMITE_DOWNLOAD, ATIVO) VALUES
 (1,  'Básico Mensal',            'Catálogo completo em SD para 1 tela, sem downloads.',           19.90,  'SD',      1,  0, 1),
 (2,  'Básico Anual',             'Plano anual de entrada com cobrança única em SD.',              199.90, 'SD',      1,  0, 1),
@@ -272,9 +269,6 @@ INSERT INTO PLANO (CODIGO, NOME_PLANO, DESCRICAO, PRECO, QUALIDADE_VIDEO, LIMITE
 (29, 'Kids Anual',               'Plano anual Kids com controle parental reforçado.',             179.90, 'HD',      2,  1, 1),
 (30, 'Corporativo Mensal',       'Licença corporativa 4K para até 10 telas.',                     89.90,  '4K',      10, 1, 1);
 
--- ---------------------------------------------------------------------
--- 2.2 ASSINATURA — 30 contratos de assinatura
--- ---------------------------------------------------------------------
 INSERT INTO ASSINATURA (CODIGO, CODIGO_PLANO, CODIGO_ASSINATURA, DATA_INICIO, DATA_FIM, STATUS_ASSINATURA, RENOVACAO_AUTOMATICA) VALUES
 (1,  1,  'ASS-2025-0001', '2025-01-01', NULL,         'ATIVA',     1),
 (2,  2,  'ASS-2025-0002', '2025-01-08', NULL,         'ATIVA',     1),
@@ -307,9 +301,6 @@ INSERT INTO ASSINATURA (CODIGO, CODIGO_PLANO, CODIGO_ASSINATURA, DATA_INICIO, DA
 (29, 29, 'ASS-2025-0029', '2025-07-16', NULL,         'ATIVA',     1),
 (30, 30, 'ASS-2025-0030', '2025-07-23', NULL,         'ATIVA',     1);
 
--- ---------------------------------------------------------------------
--- 2.3 USUARIO — 30 clientes cadastrados
--- ---------------------------------------------------------------------
 INSERT INTO USUARIO (CODIGO, CODIGO_ASSINATURA, NOME, EMAIL, SENHA_HASH, CPF, DATA_NASCIMENTO, TELEFONE, DATA_CADASTRO, ATIVO) VALUES
 (1,  1,  'Ana Beatriz Ferreira',   'ana-beatriz-ferreira@exemplo.com',     '$2b$12$180f7600b42e4cd6944bda2cf2265705b4d9068a35b79a2d94046', '12345678909', '1973-05-19', '(11) 91123-4567', '2025-01-01 09:07:00', 1),
 (2,  2,  'Bruno Carvalho Lima',    'bruno-carvalho-lima@email.com.br',     '$2b$12$2e61a0c55405c0fb201532535732f0216bd5007b69f38ef1661ef', '24691357882', '1976-10-04', '(21) 91246-9134', '2025-01-08 09:14:00', 1),
@@ -342,9 +333,6 @@ INSERT INTO USUARIO (CODIGO, CODIGO_ASSINATURA, NOME, EMAIL, SENHA_HASH, CPF, DA
 (29, 29, 'Caio Emanuel Furtado',   'caio-emanuel-furtado@webmail.com.br',  '$2b$12$42a21bb613d239ad4c97d5f8f00e43bb208f8c386891af45242a9', '58024688158', '2002-04-09', '(91) 94580-2443', '2025-07-16 09:23:00', 1),
 (30, 30, 'Débora Regina Amaral',   'debora-regina-amaral@contato.com',     '$2b$12$c081808335cc12e81dc230f79a556a0cbb57651f3f774488f7dbb', '70370367065', '1972-10-17', '(85) 94703-7010', '2025-07-23 09:30:00', 1);
 
--- ---------------------------------------------------------------------
--- 2.4 GENERO — 30 gêneros do catálogo
--- ---------------------------------------------------------------------
 INSERT INTO GENERO (CODIGO, NOME_GENERO, DESCRICAO, CATEGORIA, DATA_CRIACAO, ATIVO) VALUES
 (1,  'Ação',              'Perseguições, confrontos e ritmo acelerado.',            'FICCAO',         '2024-03-02 09:00:00', 1),
 (2,  'Aventura',          'Jornadas, descobertas e desafios em locais distantes.',  'FICCAO',         '2024-03-03 10:00:00', 1),
@@ -377,9 +365,6 @@ INSERT INTO GENERO (CODIGO, NOME_GENERO, DESCRICAO, CATEGORIA, DATA_CRIACAO, ATI
 (29, 'Stand-up',          'Apresentações de humor em palco.',                       'ENTRETENIMENTO', '2024-03-30 13:00:00', 1),
 (30, 'Cyberpunk',         'Futuro distópico marcado por tecnologia e corporações.', 'FICCAO',         '2024-03-31 08:00:00', 0);
 
--- ---------------------------------------------------------------------
--- 2.5 CONTEUDO — 60 obras (30 filmes + 30 séries)
--- ---------------------------------------------------------------------
 INSERT INTO CONTEUDO (CODIGO, TITULO, SINOPSE, ANO_LANCAMENTO, CLASSIFICACAO_ETARIA, DATA_INCLUSAO_CATALOGO, TIPO_CONTEUDO, TRAILER_URL, ATIVO) VALUES
 (1, 'O Último Farol', 'Um detetive aposentado volta à cidade natal depois de vinte anos na Serra do Mar. Para seguir em frente, precisa decidir de que lado da lei quer estar.', 2023, '12', '2024-01-27', 'FILME', 'https://trailer.streaming.com/o-ultimo-farol', 1),
 (2, 'Código Vermelho', 'Uma enfermeira da periferia perde a memória após um acidente na fronteira com o Uruguai. Para seguir em frente, precisa escolher entre a verdade e a lealdade à família.', 2022, '16', '2024-02-13', 'FILME', 'https://trailer.streaming.com/codigo-vermelho', 1),
@@ -442,9 +427,6 @@ INSERT INTO CONTEUDO (CODIGO, TITULO, SINOPSE, ANO_LANCAMENTO, CLASSIFICACAO_ETA
 (59, 'Geração Z', 'Em Geração Z, um piloto de testes encontra um diário escondido em uma pequena cidade do Paraná e, a cada episódio, precisa abrir mão do sucesso para salvar um amigo.', 2022, '12', '2025-01-16', 'SERIE', 'https://trailer.streaming.com/geracao-z', 1),
 (60, 'Última Temporada', 'Em Última Temporada, uma jornalista investigativa descobre um arquivo confidencial no interior de Minas Gerais e, a cada episódio, precisa revelar o que sabe antes que seja tarde.', 2024, '14', '2025-01-29', 'SERIE', 'https://trailer.streaming.com/ultima-temporada', 1);
 
--- ---------------------------------------------------------------------
--- 2.6 FILME — 30 filmes
--- ---------------------------------------------------------------------
 INSERT INTO FILME (CODIGO, DURACAO_MINUTOS, DIRETOR, ORCAMENTO, BILHETERIA, DATA_ESTREIA_CINEMA, RESOLUCAO_MAXIMA, IDIOMA_ORIGINAL, POSSUI_LEGENDA_PT) VALUES
 (1,  95,  'Helena Vasconcelos', 5200000.00,  9360000.00,   '2023-02-04', 'HD',      'Inglês',    1),
 (2,  102, 'Rogério Bastos',     8900000.00,  27590000.00,  '2022-03-07', 'FULL_HD', 'Espanhol',  1),
@@ -477,9 +459,6 @@ INSERT INTO FILME (CODIGO, DURACAO_MINUTOS, DIRETOR, ORCAMENTO, BILHETERIA, DATA
 (29, 151, 'Heloísa Prado',      18800000.00, 41360000.00,  '2018-06-04', 'HD',      'Japonês',   1),
 (30, 88,  'Alexandre Mota',     22500000.00, 11250000.00,  NULL,         'FULL_HD', 'Português', 0);
 
--- ---------------------------------------------------------------------
--- 2.7 SERIE — 30 séries
--- ---------------------------------------------------------------------
 INSERT INTO SERIE (CODIGO, DATA_PRIMEIRA_EXIBICAO, EMISSORA_ORIGINAL, PAIS_ORIGEM, STATUS_PRODUCAO, CRIADOR) VALUES
 (31, '2021-02-06', 'Stream Max',   'Estados Unidos', 'FINALIZADA',   'Fábio Nascimento'),
 (32, '2022-03-11', 'TV Vale',      'Reino Unido',    'FINALIZADA',   'Lorena Vieira'),
@@ -512,9 +491,6 @@ INSERT INTO SERIE (CODIGO, DATA_PRIMEIRA_EXIBICAO, EMISSORA_ORIGINAL, PAIS_ORIGE
 (59, '2022-06-11', 'Play Séries',  'Argentina',      'FINALIZADA',   'Cibele Andrade'),
 (60, '2024-07-16', 'Canal Aurora', 'Brasil',         'EM_ANDAMENTO', 'Alexandre Pimentel');
 
--- ---------------------------------------------------------------------
--- 2.8 EPISODIO — 30 episódios
--- ---------------------------------------------------------------------
 INSERT INTO EPISODIO (CODIGO, CODIGO_SERIE, TITULO_EPISODIO, NUMERO_TEMPORADA, NUMERO_EPISODIO, DURACAO_MINUTO, DATA_EXIBICAO, SINOPSE) VALUES
 (1, 31, 'Distrito 9 — Piloto', 1, 1, 43, '2021-02-13', 'Em Distrito 9, um músico fracassado encontra uma carta nunca enviada no sertão da Paraíba e, a cada episódio, precisa decidir de que lado da lei quer estar.'),
 (2, 32, 'Herdeiros do Amanhã — Primeiras Pistas', 1, 1, 46, '2022-03-18', 'Em Herdeiros do Amanhã, uma advogada recém-formada aceita um trabalho fora do país no centro histórico de Salvador e, a cada episódio, precisa assumir as consequências de uma escolha antiga.'),
@@ -547,9 +523,6 @@ INSERT INTO EPISODIO (CODIGO, CODIGO_SERIE, TITULO_EPISODIO, NUMERO_TEMPORADA, N
 (29, 39, 'A Coroa de Espinhos — O Abismo', 1, 2, 37, '2022-11-02', 'Em A Coroa de Espinhos, uma professora de história encontra uma carta nunca enviada no sertão da Paraíba e, a cada episódio, precisa decidir de que lado da lei quer estar.'),
 (30, 40, 'Mistério na Serra — Depois do Fim', 1, 2, 42, '2023-12-08', 'Em Mistério na Serra, um detetive aposentado aceita um trabalho fora do país no centro histórico de Salvador e, a cada episódio, precisa assumir as consequências de uma escolha antiga.');
 
--- ---------------------------------------------------------------------
--- 2.9 CONTEUDO_GENERO — 30 vínculos conteúdo x gênero
--- ---------------------------------------------------------------------
 INSERT INTO CONTEUDO_GENERO (CODIGO_CONTEUDO, CODIGO_GENERO, PRINCIPAL, PESO_RELEVANCIA, DATA_VINCULACAO, OBSERVACAO, ATIVO) VALUES
 (1,  6,  0, 0.67, '2024-02-12', 'Tema secundário explorado na trama.',                1),
 (2,  11, 0, 0.74, '2024-02-23', 'Classificação definida pela curadoria do catálogo.', 1),
@@ -582,9 +555,6 @@ INSERT INTO CONTEUDO_GENERO (CODIGO_CONTEUDO, CODIGO_GENERO, PRINCIPAL, PESO_REL
 (59, 26, 0, 0.63, '2024-02-20', 'Componente central da sinopse.',                     1),
 (60, 1,  1, 0.70, '2024-03-02', 'Gênero principal da obra.',                          1);
 
--- ---------------------------------------------------------------------
--- 2.10 PERFIL — 30 perfis de usuário
--- ---------------------------------------------------------------------
 INSERT INTO PERFIL (CODIGO, CODIGO_USUARIO, NOME_PERFIL, TIPO_PERFIL, CLASSIFICACAO_ETARIA_MAX, IDIOMA_PREFERIDO, DATA_CRIACAO, ATIVO) VALUES
 (1,  1,  'Principal', 'ADULTO',   '18', 'pt-BR', '2025-01-01 08:30:00', 1),
 (2,  2,  'Principal', 'ADULTO',   '18', 'pt-BR', '2025-01-08 08:30:00', 1),
@@ -617,9 +587,6 @@ INSERT INTO PERFIL (CODIGO, CODIGO_USUARIO, NOME_PERFIL, TIPO_PERFIL, CLASSIFICA
 (29, 5,  'Infantil',  'INFANTIL', '10', 'pt-BR', '2025-01-29 08:30:00', 1),
 (30, 6,  'Infantil',  'INFANTIL', '10', 'pt-BR', '2025-02-05 08:30:00', 1);
 
--- ---------------------------------------------------------------------
--- 2.11 DISPOSITIVO — 30 dispositivos cadastrados
--- ---------------------------------------------------------------------
 INSERT INTO DISPOSITIVO (CODIGO, CODIGO_USUARIO, TIPO_DISPOSITIVO, MODELO, SISTEMA_OPERACIONAL, DATA_ULTIMO_ACESSO, ATIVO) VALUES
 (1,  1,  'SMART_TV',      'Dell Inspiron 15', 'Android',        '2025-08-06 21:00:00', 1),
 (2,  2,  'CELULAR',       'LG OLED C2',       'PlayStation OS', '2025-08-11 22:00:00', 1),
@@ -652,9 +619,6 @@ INSERT INTO DISPOSITIVO (CODIGO, CODIGO_USUARIO, TIPO_DISPOSITIVO, MODELO, SISTE
 (29, 29, 'CONSOLE',       'Dell Inspiron 15', 'Android',        '2025-09-26 01:00:00', 1),
 (30, 30, 'STREAMING_BOX', 'LG OLED C2',       'PlayStation OS', '2025-10-01 02:00:00', 1);
 
--- ---------------------------------------------------------------------
--- 2.12 FORMA_PAGAMENTO — 30 formas de pagamento
--- ---------------------------------------------------------------------
 INSERT INTO FORMA_PAGAMENTO (CODIGO, CODIGO_USUARIO, TIPO_PAGAMENTO, NOME_TITULAR, ULTIMOS_DIGITOS, BANDEIRA, DATA_VALIDADE, STATUS, DATA_CADASTRO) VALUES
 (1,  1,  'CARTAO_CREDITO', 'Ana Beatriz Ferreira',   '1137', 'Visa',             '2028-02-01', 1, '2025-01-01 10:03:00'),
 (2,  2,  'PIX',            'Bruno Carvalho Lima',    NULL,   NULL,               NULL,         1, '2025-01-08 10:06:00'),
@@ -687,9 +651,6 @@ INSERT INTO FORMA_PAGAMENTO (CODIGO, CODIGO_USUARIO, TIPO_PAGAMENTO, NOME_TITULA
 (29, 29, 'PIX',            'Caio Emanuel Furtado',   NULL,   NULL,               NULL,         1, '2025-07-16 10:27:00'),
 (30, 30, 'BOLETO',         NULL,                     NULL,   NULL,               NULL,         1, '2025-07-23 10:30:00');
 
--- ---------------------------------------------------------------------
--- 2.13 PAGAMENTO — 30 cobranças
--- ---------------------------------------------------------------------
 INSERT INTO PAGAMENTO (CODIGO, CODIGO_FORMA_PAGAMENTO, DATA_PAGAMENTO, DATA_VENCIMENTO, VALOR, STATUS_PAGAMENTO, CODIGO_TRANSACAO) VALUES
 (1,  1,  '2025-02-04 00:00:00', '2025-02-05', 19.90,  'APROVADO',  'TX-2025-00001-709B55'),
 (2,  2,  '2025-02-15 00:00:00', '2025-02-16', 199.90, 'APROVADO',  'TX-2025-00002-27CA64'),
@@ -722,9 +683,6 @@ INSERT INTO PAGAMENTO (CODIGO, CODIGO_FORMA_PAGAMENTO, DATA_PAGAMENTO, DATA_VENC
 (29, 29, '2025-12-09 00:00:00', '2025-12-10', 179.90, 'APROVADO',  'TX-2025-00029-20B635'),
 (30, 30, '2025-12-20 00:00:00', '2025-12-21', 89.90,  'APROVADO',  'TX-2025-00030-AB199C');
 
--- ---------------------------------------------------------------------
--- 2.14 HISTORICO_VISUALIZACAO — 30 exibições registradas
--- ---------------------------------------------------------------------
 INSERT INTO HISTORICO_VISUALIZACAO (CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO, DATA_HORA_INICIO, DATA_HORA_FIM, TEMPO_ASSISTIDO_SEG, PERCENTUAL_PROGRESSO, CONCLUIDO, ORIGEM_ACESSO) VALUES
 (1,  1,  1,  '2025-03-02 20:00:00', '2025-03-02 20:11:15', 675,  12.50,  0, 'SMART_TV'),
 (2,  2,  2,  '2025-03-03 21:00:00', '2025-03-03 21:43:11', 2591, 48.00,  0, 'CELULAR'),
@@ -757,9 +715,6 @@ INSERT INTO HISTORICO_VISUALIZACAO (CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO, DATA
 (29, 29, 29, '2025-03-30 23:00:00', '2025-03-31 00:30:00', 5400, 100.00, 1, 'NOTEBOOK'),
 (30, 30, 30, '2025-03-31 19:00:00', '2025-03-31 19:21:35', 1295, 24.00,  0, 'WEB');
 
--- ---------------------------------------------------------------------
--- 2.15 AVALIACAO — 30 avaliações
--- ---------------------------------------------------------------------
 INSERT INTO AVALIACAO (CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO, NOTA, COMENTARIO, DATA_AVALIACAO, RECOMENDA) VALUES
 (1,  1,  31, 5.00, 'Fotografia impecável, vale a pena assistir em 4K.',          '2025-04-03 21:07:00', 1),
 (2,  2,  32, 4.50, 'Um dos melhores títulos do catálogo nacional.',              '2025-04-05 21:14:00', 1),
@@ -792,9 +747,6 @@ INSERT INTO AVALIACAO (CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO, NOTA, COMENTARIO,
 (29, 29, 59, 4.50, 'Assisti com a família e todos gostaram.',                    '2025-05-30 00:23:00', 1),
 (30, 30, 60, 3.50, 'Elenco competente, mas o roteiro perde ritmo.',              '2025-06-01 00:30:00', 1);
 
--- ---------------------------------------------------------------------
--- 2.16 MINHA_LISTA — 30 itens salvos
--- ---------------------------------------------------------------------
 INSERT INTO MINHA_LISTA (CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO, DATA_ADICAO, PRIORIDADE, NOTIFICAR_LANCAMENTO) VALUES
 (1,  1,  8,  '2025-05-02 13:00:00', 2, 0),
 (2,  2,  15, '2025-05-03 14:00:00', 3, 0),
@@ -829,36 +781,10 @@ INSERT INTO MINHA_LISTA (CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO, DATA_ADICAO, PR
 
 COMMIT;
 
--- Conferência da carga: todas as tabelas devem ter 30 registros,
--- exceto CONTEUDO, que tem 60 (30 filmes + 30 séries).
-SELECT 'PLANO' AS TABELA, COUNT(*) AS REGISTROS FROM PLANO
-UNION ALL SELECT 'ASSINATURA', COUNT(*) FROM ASSINATURA
-UNION ALL SELECT 'USUARIO', COUNT(*) FROM USUARIO
-UNION ALL SELECT 'GENERO', COUNT(*) FROM GENERO
-UNION ALL SELECT 'CONTEUDO', COUNT(*) FROM CONTEUDO
-UNION ALL SELECT 'FILME', COUNT(*) FROM FILME
-UNION ALL SELECT 'SERIE', COUNT(*) FROM SERIE
-UNION ALL SELECT 'EPISODIO', COUNT(*) FROM EPISODIO
-UNION ALL SELECT 'CONTEUDO_GENERO', COUNT(*) FROM CONTEUDO_GENERO
-UNION ALL SELECT 'PERFIL', COUNT(*) FROM PERFIL
-UNION ALL SELECT 'DISPOSITIVO', COUNT(*) FROM DISPOSITIVO
-UNION ALL SELECT 'FORMA_PAGAMENTO', COUNT(*) FROM FORMA_PAGAMENTO
-UNION ALL SELECT 'PAGAMENTO', COUNT(*) FROM PAGAMENTO
-UNION ALL SELECT 'HISTORICO_VISUALIZACAO', COUNT(*) FROM HISTORICO_VISUALIZACAO
-UNION ALL SELECT 'AVALIACAO', COUNT(*) FROM AVALIACAO
-UNION ALL SELECT 'MINHA_LISTA', COUNT(*) FROM MINHA_LISTA
-ORDER BY TABELA;
-
 -- 3. Índices
 -- Criação de pelo menos um índice (INDEX) em um atributo.
 
 -- Incluir justificativa para a escolha do campo indexado, explicando o benefício em termos de desempenho.
-
---
--- Os índices são criados DEPOIS da carga inicial: assim o banco não
--- gasta tempo atualizando cada índice a cada INSERT em massa. Em um
--- ambiente de produção, o mesmo raciocínio vale para cargas grandes.
--- =====================================================================
 
 -- ---------------------------------------------------------------------
 -- 3.1 ÍNDICE OBRIGATÓRIO — HISTÓRICO DE EXIBIÇÃO POR PERFIL E DATA
@@ -891,7 +817,7 @@ ORDER BY TABELA;
 --     nas leituras.
 -- ---------------------------------------------------------------------
 CREATE INDEX IDX_HISTORICO_PERFIL_DATA
-    ON HISTORICO_VISUALIZACAO (CODIGO_PERFIL, DATA_HORA_INICIO);
+ON HISTORICO_VISUALIZACAO (CODIGO_PERFIL, DATA_HORA_INICIO);
 
 -- ---------------------------------------------------------------------
 -- 3.2 ÍNDICE DE APOIO — BUSCA POR TÍTULO NO CATÁLOGO
@@ -909,7 +835,8 @@ CREATE INDEX IDX_HISTORICO_PERFIL_DATA
 -- trecho (LIKE '%termo%') não se beneficiam dele e exigiriam um índice
 -- de texto completo (FULLTEXT), que é outra estratégia.
 -- ---------------------------------------------------------------------
-CREATE INDEX IDX_CONTEUDO_TITULO ON CONTEUDO (TITULO);
+CREATE INDEX IDX_CONTEUDO_TITULO 
+ON CONTEUDO (TITULO);
 
 -- ---------------------------------------------------------------------
 -- 3.3 ÍNDICE DE APOIO — COBRANÇA POR STATUS E VENCIMENTO
@@ -927,7 +854,7 @@ CREATE INDEX IDX_CONTEUDO_TITULO ON CONTEUDO (TITULO);
 -- que mais se repete no fechamento financeiro.
 -- ---------------------------------------------------------------------
 CREATE INDEX IDX_PAGAMENTO_STATUS_VENC
-    ON PAGAMENTO (STATUS_PAGAMENTO, DATA_VENCIMENTO);
+ON PAGAMENTO (STATUS_PAGAMENTO, DATA_VENCIMENTO);
 
 -- ---------------------------------------------------------------------
 -- 3.4 ÍNDICE DE APOIO — MÉDIA DE NOTAS POR CONTEÚDO
@@ -944,46 +871,32 @@ CREATE INDEX IDX_PAGAMENTO_STATUS_VENC
 -- do conteúdo é acessada com alta frequência.
 -- ---------------------------------------------------------------------
 CREATE INDEX IDX_AVALIACAO_CONTEUDO_NOTA
-    ON AVALIACAO (CODIGO_CONTEUDO, NOTA);
-
--- Observação: chaves estrangeiras já recebem índice automático do
--- InnoDB quando não existe um índice que as cubra; por isso não é
--- necessário criar índices extras apenas para as FKs.
-
--- Verificação dos índices criados:
--- SHOW INDEX FROM HISTORICO_VISUALIZACAO;
--- EXPLAIN SELECT CODIGO FROM HISTORICO_VISUALIZACAO
---          WHERE CODIGO_PERFIL = 5 ORDER BY DATA_HORA_INICIO DESC LIMIT 10;
+ON AVALIACAO (CODIGO_CONTEUDO, NOTA);
 
 -- 4. Scripts Adicionais (Inserir como Comentários no Arquivo)
 -- Inclua os seguintes exemplos no arquivo .sql, comentados, como demonstração de domínio técnico:
 
 -- Exclusão do banco de dados.
-
 -- DROP DATABASE IF EXISTS STREAMING;
 
 -- Exclusão de uma tabela.
-
 -- DROP TABLE IF EXISTS MINHA_LISTA;
 
 -- Exclusão de uma coluna de uma tabela.
-
--- ALTER TABLE CONTEUDO DROP COLUMN TRAILER_URL;
+-- ALTER TABLE CONTEUDO 
+-- DROP COLUMN TRAILER_URL;
 
 -- Adição de uma nova coluna (não prevista na modelagem inicial).
-
 -- ALTER TABLE USUARIO
---     ADD COLUMN ACEITA_MARKETING TINYINT(1) NOT NULL DEFAULT 0 AFTER ATIVO;
+-- ADD COLUMN ACEITA_MARKETING TINYINT(1) NOT NULL DEFAULT 0 AFTER ATIVO;
 
 -- Edição de um registro específico.
-
 -- UPDATE PLANO
---    SET PRECO = 279.90,
---        DESCRICAO = 'Versão anual do plano Padrão com desconto de 22%.'
---  WHERE CODIGO = 4;
+-- SET PRECO = 279.90,
+-- DESCRICAO = 'Versão anual do plano Padrão com desconto de 22%.'
+-- WHERE CODIGO = 4;
 
 -- Exclusão de um registro específico.
-
 -- DELETE FROM AVALIACAO WHERE CODIGO = 30;
 
 -- 5. Consultas SQL (Queries)
@@ -1001,17 +914,10 @@ CREATE INDEX IDX_AVALIACAO_CONTEUDO_NOTA
 -- sem eles o OR anularia o filtro de preço). Ordena do mais caro para o
 -- mais barato.
 -- =====================================================================
-SELECT CODIGO,
-       NOME_PLANO,
-       PRECO,
-       QUALIDADE_VIDEO,
-       LIMITE_TELAS
-  FROM PLANO
- WHERE ATIVO = 1
-   AND PRECO BETWEEN 20.00 AND 50.00
-   AND (PERMITE_DOWNLOAD = 1 OR LIMITE_TELAS >= 4)
- ORDER BY PRECO DESC, NOME_PLANO ASC;
-
+SELECT CODIGO, NOME_PLANO, PRECO, QUALIDADE_VIDEO, LIMITE_TELAS
+FROM PLANO
+WHERE ATIVO = 1 AND PRECO BETWEEN 20.00 AND 50.00 AND (PERMITE_DOWNLOAD = 1 OR LIMITE_TELAS >= 4)
+ORDER BY PRECO DESC, NOME_PLANO ASC;
 
 -- =====================================================================
 -- 5.2 CONSULTA SIMPLES 2 — CATÁLOGO ADULTO RECENTE
@@ -1020,16 +926,10 @@ SELECT CODIGO,
 -- Lista conteúdos ativos classificados como 16 ou 18 anos, lançados entre
 -- 2022 e 2025, do mais recente para o mais antigo.
 -- =====================================================================
-SELECT CODIGO,
-       TITULO,
-       ANO_LANCAMENTO,
-       TIPO_CONTEUDO,
-       CLASSIFICACAO_ETARIA
-  FROM CONTEUDO
- WHERE ATIVO = 1
-   AND CLASSIFICACAO_ETARIA IN ('16', '18')
-   AND ANO_LANCAMENTO BETWEEN 2022 AND 2025
- ORDER BY ANO_LANCAMENTO DESC, TITULO ASC;
+SELECT CODIGO, TITULO, ANO_LANCAMENTO, TIPO_CONTEUDO, CLASSIFICACAO_ETARIA
+FROM CONTEUDO
+WHERE ATIVO = 1 AND CLASSIFICACAO_ETARIA IN ('16', '18') AND ANO_LANCAMENTO BETWEEN 2022 AND 2025
+ORDER BY ANO_LANCAMENTO DESC, TITULO ASC;
 
 -- Quatro consultas com duas tabelas, utilizando INNER JOIN.
 
@@ -1041,18 +941,11 @@ SELECT CODIGO,
 -- Mostra apenas filmes com 120 minutos ou mais cuja bilheteria superou o
 -- orçamento, calculando o lucro estimado e ordenando por ele.
 -- =====================================================================
-SELECT c.TITULO,
-       f.DIRETOR,
-       f.DURACAO_MINUTOS,
-       f.ORCAMENTO,
-       f.BILHETERIA,
-       (f.BILHETERIA - f.ORCAMENTO) AS LUCRO_ESTIMADO
-  FROM CONTEUDO c
- INNER JOIN FILME f ON f.CODIGO = c.CODIGO
- WHERE f.DURACAO_MINUTOS >= 120
-   AND f.BILHETERIA > f.ORCAMENTO
- ORDER BY LUCRO_ESTIMADO DESC, c.TITULO ASC;
-
+SELECT c.TITULO, f.DIRETOR, f.DURACAO_MINUTOS, f.ORCAMENTO, f.BILHETERIA, (f.BILHETERIA - f.ORCAMENTO) AS LUCRO_ESTIMADO
+FROM CONTEUDO c
+INNER JOIN FILME f ON f.CODIGO = c.CODIGO
+WHERE f.DURACAO_MINUTOS >= 120 AND f.BILHETERIA > f.ORCAMENTO
+ORDER BY LUCRO_ESTIMADO DESC, c.TITULO ASC;
 
 -- =====================================================================
 -- 5.4 INNER JOIN 2 — CLIENTES COM ASSINATURA ATIVA E RECENTE
@@ -1062,18 +955,11 @@ SELECT c.TITULO,
 -- Filtra assinaturas ativas iniciadas a partir de março de 2025 ou sem
 -- renovação automática, mostrando o código da assinatura e a data.
 -- =====================================================================
-SELECT u.NOME,
-       u.EMAIL,
-       a.CODIGO_ASSINATURA,
-       a.DATA_INICIO,
-       a.RENOVACAO_AUTOMATICA
-  FROM USUARIO u
- INNER JOIN ASSINATURA a ON a.CODIGO = u.CODIGO_ASSINATURA
- WHERE u.ATIVO = 1
-   AND a.STATUS_ASSINATURA = 'ATIVA'
-   AND (a.DATA_INICIO >= '2025-03-01' OR a.RENOVACAO_AUTOMATICA = 0)
- ORDER BY a.DATA_INICIO DESC, u.NOME ASC;
-
+SELECT u.NOME, u.EMAIL, a.CODIGO_ASSINATURA, a.DATA_INICIO, a.RENOVACAO_AUTOMATICA
+FROM USUARIO u
+INNER JOIN ASSINATURA a ON a.CODIGO = u.CODIGO_ASSINATURA
+WHERE u.ATIVO = 1 AND a.STATUS_ASSINATURA = 'ATIVA' AND (a.DATA_INICIO >= '2025-03-01' OR a.RENOVACAO_AUTOMATICA = 0)
+ORDER BY a.DATA_INICIO DESC, u.NOME ASC;
 
 -- =====================================================================
 -- 5.5 INNER JOIN 3 — NOTA MÉDIA POR CONTEÚDO
@@ -1084,17 +970,13 @@ SELECT u.NOME,
 -- conteúdos com média igual ou superior a 4,00 (filtro aplicado depois da
 -- agregação, por isso não pode ficar no WHERE).
 -- =====================================================================
-SELECT c.CODIGO,
-       c.TITULO,
-       COUNT(a.CODIGO)        AS QTD_AVALIACOES,
-       ROUND(AVG(a.NOTA), 2)  AS NOTA_MEDIA
-  FROM CONTEUDO c
- INNER JOIN AVALIACAO a ON a.CODIGO_CONTEUDO = c.CODIGO
- WHERE c.ATIVO = 1
- GROUP BY c.CODIGO, c.TITULO
+SELECT c.CODIGO, c.TITULO, COUNT(a.CODIGO) AS QTD_AVALIACOES, ROUND(AVG(a.NOTA), 2) AS NOTA_MEDIA
+FROM CONTEUDO c
+INNER JOIN AVALIACAO a ON a.CODIGO_CONTEUDO = c.CODIGO
+WHERE c.ATIVO = 1
+GROUP BY c.CODIGO, c.TITULO
 HAVING AVG(a.NOTA) >= 4.00
- ORDER BY NOTA_MEDIA DESC, QTD_AVALIACOES DESC, c.TITULO ASC;
-
+ORDER BY NOTA_MEDIA DESC, QTD_AVALIACOES DESC, c.TITULO ASC;
 
 -- =====================================================================
 -- 5.6 INNER JOIN 4 — PAGAMENTOS APROVADOS POR FORMA DE PAGAMENTO
@@ -1103,17 +985,13 @@ HAVING AVG(a.NOTA) >= 4.00
 -- Soma os pagamentos aprovados de 2025 por tipo (cartão, PIX, boleto) e
 -- usa HAVING para descartar tipos com valor total baixo.
 -- =====================================================================
-SELECT f.TIPO_PAGAMENTO,
-       COUNT(p.CODIGO)         AS QTD_PAGAMENTOS,
-       SUM(p.VALOR)            AS VALOR_TOTAL,
-       ROUND(AVG(p.VALOR), 2)  AS TICKET_MEDIO
-  FROM FORMA_PAGAMENTO f
- INNER JOIN PAGAMENTO p ON p.CODIGO_FORMA_PAGAMENTO = f.CODIGO
- WHERE p.STATUS_PAGAMENTO = 'APROVADO'
-   AND p.DATA_VENCIMENTO BETWEEN '2025-01-01' AND '2025-12-31'
- GROUP BY f.TIPO_PAGAMENTO
+SELECT f.TIPO_PAGAMENTO, COUNT(p.CODIGO) AS QTD_PAGAMENTOS, SUM(p.VALOR) AS VALOR_TOTAL, ROUND(AVG(p.VALOR), 2) AS TICKET_MEDIO
+FROM FORMA_PAGAMENTO f
+INNER JOIN PAGAMENTO p ON p.CODIGO_FORMA_PAGAMENTO = f.CODIGO
+WHERE p.STATUS_PAGAMENTO = 'APROVADO' AND p.DATA_VENCIMENTO BETWEEN '2025-01-01' AND '2025-12-31'
+GROUP BY f.TIPO_PAGAMENTO
 HAVING SUM(p.VALOR) > 100.00
- ORDER BY VALOR_TOTAL DESC;
+ORDER BY VALOR_TOTAL DESC;
 
 -- Uma consulta com LEFT JOIN.
 
@@ -1125,14 +1003,11 @@ HAVING SUM(p.VALOR) > 100.00
 -- a.CODIGO IS NULL seleciona exatamente os conteúdos sem avaliação — um
 -- anti-join, útil para a fila de curadoria pedir avaliações.
 -- =====================================================================
-SELECT c.CODIGO,
-       c.TITULO,
-       c.ANO_LANCAMENTO,
-       a.CODIGO AS CODIGO_AVALIACAO
-  FROM CONTEUDO c
-  LEFT JOIN AVALIACAO a ON a.CODIGO_CONTEUDO = c.CODIGO
- WHERE a.CODIGO IS NULL
- ORDER BY c.TITULO ASC;
+SELECT c.CODIGO, c.TITULO, c.ANO_LANCAMENTO, a.CODIGO AS CODIGO_AVALIACAO
+FROM CONTEUDO c
+LEFT JOIN AVALIACAO a ON a.CODIGO_CONTEUDO = c.CODIGO
+WHERE a.CODIGO IS NULL
+ORDER BY c.TITULO ASC;
 
 -- Uma consulta com RIGHT JOIN.
 
@@ -1144,14 +1019,11 @@ SELECT c.CODIGO,
 -- CONTEUDO_GENERO. O filtro cg.CODIGO_CONTEUDO IS NULL devolve os gêneros
 -- órfãos, que a curadoria pode usar para revisar o catálogo.
 -- =====================================================================
-SELECT g.CODIGO,
-       g.NOME_GENERO,
-       g.CATEGORIA,
-       cg.CODIGO_CONTEUDO
-  FROM CONTEUDO_GENERO cg
- RIGHT JOIN GENERO g ON g.CODIGO = cg.CODIGO_GENERO
- WHERE cg.CODIGO_CONTEUDO IS NULL
- ORDER BY g.NOME_GENERO ASC;
+SELECT g.CODIGO, g.NOME_GENERO, g.CATEGORIA, cg.CODIGO_CONTEUDO
+FROM CONTEUDO_GENERO cg
+RIGHT JOIN GENERO g ON g.CODIGO = cg.CODIGO_GENERO
+WHERE cg.CODIGO_CONTEUDO IS NULL
+ORDER BY g.NOME_GENERO ASC;
 
 -- Uma consulta com três tabelas, utilizando qualquer tipo de JOIN.
 
@@ -1163,17 +1035,14 @@ SELECT g.CODIGO,
 -- avaliações cada conteúdo recebeu por tipo e a média. O HAVING mantém
 -- apenas os grupos com média alta.
 -- =====================================================================
-SELECT c.TITULO,
-       p.TIPO_PERFIL,
-       COUNT(a.CODIGO)        AS QTD_AVALIACOES,
-       ROUND(AVG(a.NOTA), 2)  AS NOTA_MEDIA
-  FROM AVALIACAO a
- INNER JOIN PERFIL p   ON p.CODIGO = a.CODIGO_PERFIL
- INNER JOIN CONTEUDO c ON c.CODIGO = a.CODIGO_CONTEUDO
- WHERE a.NOTA >= 3.00
- GROUP BY c.TITULO, p.TIPO_PERFIL
+SELECT c.TITULO, p.TIPO_PERFIL, COUNT(a.CODIGO) AS QTD_AVALIACOES, ROUND(AVG(a.NOTA), 2) AS NOTA_MEDIA
+FROM AVALIACAO a
+INNER JOIN PERFIL p   ON p.CODIGO = a.CODIGO_PERFIL
+INNER JOIN CONTEUDO c ON c.CODIGO = a.CODIGO_CONTEUDO
+WHERE a.NOTA >= 3.00
+GROUP BY c.TITULO, p.TIPO_PERFIL
 HAVING AVG(a.NOTA) >= 4.00
- ORDER BY NOTA_MEDIA DESC, c.TITULO ASC;
+ORDER BY NOTA_MEDIA DESC, c.TITULO ASC;
 
 -- Uma consulta com quatro tabelas, utilizando qualquer tipo de JOIN.
 
@@ -1186,44 +1055,15 @@ HAVING AVG(a.NOTA) >= 4.00
 -- clientes ativos e exibições com mais de 10% de progresso, e mantém no
 -- resultado somente quem passou de 30 minutos.
 -- =====================================================================
-SELECT u.NOME,
-       COUNT(h.CODIGO)                              AS EXIBICOES,
-       SUM(h.TEMPO_ASSISTIDO_SEG)                   AS TEMPO_TOTAL_SEG,
-       ROUND(SUM(h.TEMPO_ASSISTIDO_SEG) / 60, 1)    AS TEMPO_TOTAL_MIN
-  FROM HISTORICO_VISUALIZACAO h
- INNER JOIN PERFIL p   ON p.CODIGO = h.CODIGO_PERFIL
- INNER JOIN USUARIO u  ON u.CODIGO = p.CODIGO_USUARIO
- INNER JOIN CONTEUDO c ON c.CODIGO = h.CODIGO_CONTEUDO
- WHERE c.TIPO_CONTEUDO = 'FILME'
-   AND u.ATIVO = 1
-   AND h.PERCENTUAL_PROGRESSO > 10
- GROUP BY u.CODIGO, u.NOME
+SELECT u.NOME, COUNT(h.CODIGO) AS EXIBICOES, SUM(h.TEMPO_ASSISTIDO_SEG) AS TEMPO_TOTAL_SEG, ROUND(SUM(h.TEMPO_ASSISTIDO_SEG) / 60, 1) AS TEMPO_TOTAL_MIN
+FROM HISTORICO_VISUALIZACAO h
+INNER JOIN PERFIL p   ON p.CODIGO = h.CODIGO_PERFIL
+INNER JOIN USUARIO u  ON u.CODIGO = p.CODIGO_USUARIO
+INNER JOIN CONTEUDO c ON c.CODIGO = h.CODIGO_CONTEUDO
+WHERE c.TIPO_CONTEUDO = 'FILME' AND u.ATIVO = 1 AND h.PERCENTUAL_PROGRESSO > 10
+GROUP BY u.CODIGO, u.NOME
 HAVING SUM(h.TEMPO_ASSISTIDO_SEG) >= 1800
- ORDER BY TEMPO_TOTAL_SEG DESC;
-
-
--- =====================================================================
--- 5.11 NOTA TÉCNICA SOBRE OS JOINs
--- =====================================================================
--- A modelagem permite todos os JOINs solicitados: existem chaves
--- estrangeiras ligando CONTEUDO-FILME, USUARIO-ASSINATURA,
--- CONTEUDO-AVALIACAO, FORMA_PAGAMENTO-PAGAMENTO, PERFIL-USUARIO,
--- HISTORICO_PERFIL-CONTEUDO etc. Por isso nenhuma consulta precisou ser
--- substituída por falta de relacionamento.
---
--- O RIGHT JOIN do item 5.8 poderia ser escrito como LEFT JOIN invertendo
--- a ordem das tabelas (GENERO LEFT JOIN CONTEUDO_GENERO); a forma com
--- RIGHT foi mantida apenas para atender explicitamente ao requisito.
---
--- Resumo da cobertura:
---   [x] 2 consultas simples (1 tabela) ................ 5.1 e 5.2
---   [x] 4 consultas INNER JOIN (2 tabelas) ............ 5.3, 5.4, 5.5 e 5.6
---   [x] 1 consulta LEFT JOIN .......................... 5.7
---   [x] 1 consulta RIGHT JOIN ......................... 5.8
---   [x] 1 consulta com 3 tabelas ...................... 5.9
---   [x] 1 consulta com 4 tabelas ...................... 5.10
---   [x] WHERE, operadores lógicos, GROUP BY, HAVING e ORDER BY
--- =====================================================================
+ORDER BY TEMPO_TOTAL_SEG DESC;
 
 -- 6. Recursos Adicionais
 -- Criação de três VIEWs.
@@ -1240,10 +1080,10 @@ HAVING SUM(h.TEMPO_ASSISTIDO_SEG) >= 1800
 -- subconsulta em cada consulta da aplicação. A view encapsula essa lógica
 -- e, se a modelagem mudar, só a view precisa ser ajustada.
 --
--- Sobre o gênero: a primeira opção é o gênero marcado como PRINCIPAL; se
--- o conteúdo ainda não tiver um gênero principal definido, a view usa o
--- vínculo de maior peso de relevância como alternativa. Assim a coluna
--- não fica vazia quando existe classificação secundária.
+-- Sobre o gênero: a view usa o gênero marcado como PRINCIPAL; se o
+-- conteúdo ainda não tiver um gênero principal definido, usa o vínculo de
+-- maior peso de relevância. Quando o conteúdo não tem nenhum gênero
+-- vinculado, a coluna GENERO_PRINCIPAL fica NULL.
 -- =====================================================================
 CREATE OR REPLACE VIEW VW_CATALOGO_DETALHADO AS
 SELECT c.CODIGO                                   AS CODIGO_CONTEUDO,
@@ -1252,21 +1092,17 @@ SELECT c.CODIGO                                   AS CODIGO_CONTEUDO,
        c.ANO_LANCAMENTO,
        c.CLASSIFICACAO_ETARIA,
        c.DATA_INCLUSAO_CATALOGO,
-       COALESCE((SELECT g.NOME_GENERO
-                   FROM CONTEUDO_GENERO cg
-                   JOIN GENERO g ON g.CODIGO = cg.CODIGO_GENERO
-                  WHERE cg.CODIGO_CONTEUDO = c.CODIGO
-                  ORDER BY cg.PRINCIPAL DESC, cg.PESO_RELEVANCIA DESC
-                  LIMIT 1), 'Não classificado')       AS GENERO_PRINCIPAL,
+       (SELECT g.NOME_GENERO FROM CONTEUDO_GENERO cg
+		JOIN GENERO g ON g.CODIGO = cg.CODIGO_GENERO
+		WHERE cg.CODIGO_CONTEUDO = c.CODIGO
+		ORDER BY cg.PRINCIPAL DESC, cg.PESO_RELEVANCIA DESC LIMIT 1)     AS GENERO_PRINCIPAL,
        f.DURACAO_MINUTOS,
        f.RESOLUCAO_MAXIMA,
-       (SELECT COUNT(*)
-          FROM EPISODIO e
-         WHERE e.CODIGO_SERIE = c.CODIGO)            AS QTD_EPISODIOS
-  FROM CONTEUDO c
-  LEFT JOIN FILME f ON f.CODIGO = c.CODIGO
- WHERE c.ATIVO = 1;
-
+       (SELECT COUNT(*) FROM EPISODIO e 
+       WHERE e.CODIGO_SERIE = c.CODIGO) AS QTD_EPISODIOS
+FROM CONTEUDO c
+LEFT JOIN FILME f ON f.CODIGO = c.CODIGO
+WHERE c.ATIVO = 1;
 
 -- =====================================================================
 -- 6.1.2 VW_ASSINATURA_USUARIO
@@ -1293,12 +1129,11 @@ SELECT u.CODIGO                     AS CODIGO_USUARIO,
        a.DATA_INICIO,
        a.DATA_FIM,
        (SELECT COUNT(*)
-          FROM PERFIL pf
-         WHERE pf.CODIGO_USUARIO = u.CODIGO) AS QTD_PERFIS
-  FROM USUARIO u
-  JOIN ASSINATURA a ON a.CODIGO = u.CODIGO_ASSINATURA
-  JOIN PLANO p      ON p.CODIGO = a.CODIGO_PLANO;
-
+		FROM PERFIL pf
+		WHERE pf.CODIGO_USUARIO = u.CODIGO) AS QTD_PERFIS
+FROM USUARIO u
+JOIN ASSINATURA a ON a.CODIGO = u.CODIGO_ASSINATURA
+JOIN PLANO p      ON p.CODIGO = a.CODIGO_PLANO;
 
 -- =====================================================================
 -- 6.1.3 VW_DESEMPENHO_CONTEUDO
@@ -1319,96 +1154,44 @@ SELECT c.CODIGO                     AS CODIGO_CONTEUDO,
        ROUND(AVG(a.NOTA), 2)        AS NOTA_MEDIA,
        SUM(CASE WHEN a.RECOMENDA = 1 THEN 1 ELSE 0 END) AS QTD_RECOMENDACOES,
        (SELECT COUNT(*)
-          FROM HISTORICO_VISUALIZACAO h
-         WHERE h.CODIGO_CONTEUDO = c.CODIGO) AS QTD_EXIBICOES
-  FROM CONTEUDO c
-  LEFT JOIN AVALIACAO a ON a.CODIGO_CONTEUDO = c.CODIGO
- GROUP BY c.CODIGO, c.TITULO, c.TIPO_CONTEUDO;
-
-
--- =====================================================================
--- 6.1.4 CONFERÊNCIA E EXEMPLOS DE USO
--- =====================================================================
-
--- As três views existem e quantas linhas cada uma devolve:
-SELECT 'VW_CATALOGO_DETALHADO' AS VIEW_NAME, COUNT(*) AS LINHAS FROM VW_CATALOGO_DETALHADO
-UNION ALL
-SELECT 'VW_ASSINATURA_USUARIO', COUNT(*) FROM VW_ASSINATURA_USUARIO
-UNION ALL
-SELECT 'VW_DESEMPENHO_CONTEUDO', COUNT(*) FROM VW_DESEMPENHO_CONTEUDO;
-
--- Exemplo 1: catálogo de filmes que já possuem gênero classificado, do
--- mais recente para o mais antigo (a view já traz duração e resolução).
-SELECT TITULO, ANO_LANCAMENTO, GENERO_PRINCIPAL, DURACAO_MINUTOS
-  FROM VW_CATALOGO_DETALHADO
- WHERE TIPO_CONTEUDO = 'FILME'
-   AND GENERO_PRINCIPAL <> 'Não classificado'
- ORDER BY ANO_LANCAMENTO DESC, TITULO
- LIMIT 10;
-
--- Exemplo 2: clientes com assinatura suspensa ou cancelada, com o plano
--- e o valor contratado.
-SELECT NOME, EMAIL, NOME_PLANO, PRECO, STATUS_ASSINATURA
-  FROM VW_ASSINATURA_USUARIO
- WHERE STATUS_ASSINATURA <> 'ATIVA'
- ORDER BY NOME;
-
--- Exemplo 3: top 10 conteúdos por nota média, exigindo pelo menos uma
--- avaliação (a view conta as avaliações, então o filtro é simples).
-SELECT TITULO, NOTA_MEDIA, QTD_AVALIACOES, QTD_EXIBICOES
-  FROM VW_DESEMPENHO_CONTEUDO
- WHERE QTD_AVALIACOES > 0
- ORDER BY NOTA_MEDIA DESC, QTD_AVALIACOES DESC
- LIMIT 10;
-
--- Estrutura de uma view (útil para conferir a definição armazenada):
-SHOW CREATE VIEW VW_CATALOGO_DETALHADO;
+		FROM HISTORICO_VISUALIZACAO h
+		WHERE h.CODIGO_CONTEUDO = c.CODIGO) AS QTD_EXIBICOES
+FROM CONTEUDO c
+LEFT JOIN AVALIACAO a ON a.CODIGO_CONTEUDO = c.CODIGO
+GROUP BY c.CODIGO, c.TITULO, c.TIPO_CONTEUDO;
 
 -- Criação de dois TRIGGERs, sendo:
 -- Um BEFORE
-
--- Um AFTER
-
-DROP TRIGGER IF EXISTS TRG_PAGAMENTO_BEFORE_INSERT;
-DROP TRIGGER IF EXISTS TRG_PAGAMENTO_AFTER_INSERT;
-
 
 -- =====================================================================
 -- 6.2.1 TRIGGER BEFORE — TRG_PAGAMENTO_BEFORE_INSERT
 -- =====================================================================
 -- Regras aplicadas antes de cada pagamento ser gravado:
 --
---   1) VALOR não pode ser negativo. Como a coluna é DECIMAL(10,2), o
---      banco aceitaria -10.00; a validação de negócio precisa do trigger.
---      A falha é sinalizada com SIGNAL, que aborta o INSERT.
---   2) Pagamento APROVADO sem data de pagamento recebe a data/hora atual
+--   1) Pagamento APROVADO sem data de pagamento recebe a data/hora atual
 --      (NEW.DATA_PAGAMENTO = NOW()), evitando registros aprovados sem a
 --      data em que o dinheiro entrou.
---   3) Pagamento PENDENTE não pode ter data de pagamento: se a aplicação
+--   2) Pagamento PENDENTE não pode ter data de pagamento: se a aplicação
 --      enviar uma, o trigger zera o campo.
 -- =====================================================================
+DROP TRIGGER IF EXISTS TRG_PAGAMENTO_BEFORE_INSERT;
+
 DELIMITER $$
 
 CREATE TRIGGER TRG_PAGAMENTO_BEFORE_INSERT
 BEFORE INSERT ON PAGAMENTO
 FOR EACH ROW
 BEGIN
-    IF NEW.VALOR < 0 THEN
-        SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'PAGAMENTO.VALOR nao pode ser negativo.';
-    END IF;
-
     IF NEW.STATUS_PAGAMENTO = 'APROVADO' AND NEW.DATA_PAGAMENTO IS NULL THEN
         SET NEW.DATA_PAGAMENTO = NOW();
-    END IF;
-
-    IF NEW.STATUS_PAGAMENTO = 'PENDENTE' THEN
+    ELSEIF NEW.STATUS_PAGAMENTO = 'PENDENTE' THEN
         SET NEW.DATA_PAGAMENTO = NULL;
     END IF;
 END$$
 
 DELIMITER ;
 
+-- Um AFTER
 
 -- =====================================================================
 -- 6.2.2 TRIGGER AFTER — TRG_PAGAMENTO_AFTER_INSERT
@@ -1424,6 +1207,8 @@ DELIMITER ;
 --   ao usuário, sem repetir o código do usuário na tabela PAGAMENTO
 --   (o que duplicaria o dado e violaria a 3FN).
 -- =====================================================================
+DROP TRIGGER IF EXISTS TRG_PAGAMENTO_AFTER_INSERT;
+
 DELIMITER $$
 
 CREATE TRIGGER TRG_PAGAMENTO_AFTER_INSERT
@@ -1432,82 +1217,13 @@ FOR EACH ROW
 BEGIN
     IF NEW.STATUS_PAGAMENTO = 'APROVADO' THEN
         UPDATE USUARIO u
-          JOIN FORMA_PAGAMENTO f ON f.CODIGO_USUARIO = u.CODIGO
-           SET u.ATIVO = 1
-         WHERE f.CODIGO = NEW.CODIGO_FORMA_PAGAMENTO;
+		JOIN FORMA_PAGAMENTO f ON f.CODIGO_USUARIO = u.CODIGO
+		SET u.ATIVO = 1
+		WHERE f.CODIGO = NEW.CODIGO_FORMA_PAGAMENTO;
     END IF;
 END$$
 
 DELIMITER ;
-
-
--- =====================================================================
--- 6.2.3 CONFERÊNCIA DOS TRIGGERS CRIADOS
--- =====================================================================
-SELECT TRIGGER_NAME, EVENT_MANIPULATION, ACTION_TIMING, EVENT_OBJECT_TABLE
-  FROM information_schema.triggers
- WHERE trigger_schema = 'STREAMING'
- ORDER BY ACTION_TIMING, TRIGGER_NAME;
-
-
--- =====================================================================
--- 6.2.4 TESTE DO TRIGGER BEFORE (data preenchida automaticamente)
--- =====================================================================
--- Inserção de um pagamento APROVADO sem DATA_PAGAMENTO: o BEFORE deve
--- preencher a data com o instante atual.
---
--- A transação é desfeita no final com ROLLBACK, para que o banco volte
--- exatamente ao estado anterior ao teste (nenhum pagamento a mais).
-START TRANSACTION;
-
-INSERT INTO PAGAMENTO
-       (CODIGO_FORMA_PAGAMENTO, DATA_PAGAMENTO, DATA_VENCIMENTO,
-        VALOR, STATUS_PAGAMENTO, CODIGO_TRANSACAO)
-VALUES (9, NULL, '2026-01-10', 64.90, 'APROVADO', 'TX-TESTE-TRIGGER-07');
-
-SELECT 'TESTE BEFORE' AS MOMENTO, CODIGO, DATA_PAGAMENTO, STATUS_PAGAMENTO
-  FROM PAGAMENTO
- WHERE CODIGO_TRANSACAO = 'TX-TESTE-TRIGGER-07';
-
-ROLLBACK;
-
-
--- =====================================================================
--- 6.2.5 TESTE DO TRIGGER AFTER (reativação do usuário)
--- =====================================================================
--- O usuário 9 está com ATIVO = 0 (assinatura cancelada) e a forma de
--- pagamento 9 pertence a ele. Ao inserir um pagamento APROVADO, o AFTER
--- deve devolver ATIVO = 1. O ROLLBACK final desfaz as duas alterações.
-START TRANSACTION;
-
-SELECT 'ANTES DO PAGAMENTO' AS MOMENTO, CODIGO, NOME, ATIVO
-  FROM USUARIO WHERE CODIGO = 9;
-
-INSERT INTO PAGAMENTO
-       (CODIGO_FORMA_PAGAMENTO, DATA_PAGAMENTO, DATA_VENCIMENTO,
-        VALOR, STATUS_PAGAMENTO, CODIGO_TRANSACAO)
-VALUES (9, NULL, '2026-02-10', 64.90, 'APROVADO', 'TX-TESTE-TRIGGER-07B');
-
-SELECT 'DEPOIS DO PAGAMENTO' AS MOMENTO, CODIGO, NOME, ATIVO
-  FROM USUARIO WHERE CODIGO = 9;
-
-ROLLBACK;
-
-SELECT 'DEPOIS DO ROLLBACK' AS MOMENTO, CODIGO, NOME, ATIVO
-  FROM USUARIO WHERE CODIGO = 9;
-
-
--- =====================================================================
--- 6.2.6 TESTE DE VALIDAÇÃO (deve falhar de propósito)
--- =====================================================================
--- O comando abaixo é bloqueado pelo trigger BEFORE com
--- "ERROR 1644 (45000): PAGAMENTO.VALOR nao pode ser negativo.".
--- Ele está comentado porque um erro interrompe a execução do script;
--- descomente e execute sozinho para ver a mensagem.
--- INSERT INTO PAGAMENTO
---        (CODIGO_FORMA_PAGAMENTO, DATA_PAGAMENTO, DATA_VENCIMENTO,
---         VALOR, STATUS_PAGAMENTO, CODIGO_TRANSACAO)
--- VALUES (9, NULL, '2026-03-10', -10.00, 'PENDENTE', 'TX-TESTE-VALOR-NEGATIVO');
 
 -- Criação de três usuários com permissões distintas.
 
@@ -1515,7 +1231,6 @@ SELECT 'DEPOIS DO ROLLBACK' AS MOMENTO, CODIGO, NOME, ATIVO
 DROP USER IF EXISTS 'streaming_consulta'@'localhost';
 DROP USER IF EXISTS 'streaming_operador'@'localhost';
 DROP USER IF EXISTS 'streaming_admin'@'localhost';
-
 
 -- =====================================================================
 -- 6.3.1 CRIAÇÃO DOS TRÊS USUÁRIOS
@@ -1533,7 +1248,6 @@ DROP USER IF EXISTS 'streaming_admin'@'localhost';
 CREATE USER 'streaming_consulta'@'localhost' IDENTIFIED BY 'Consulta@2025';
 CREATE USER 'streaming_operador'@'localhost' IDENTIFIED BY 'Operador@2025';
 CREATE USER 'streaming_admin'@'localhost'    IDENTIFIED BY 'Admin@2025';
-
 
 -- =====================================================================
 -- 6.3.2 CONCESSÃO DE PRIVILÉGIOS
@@ -1558,18 +1272,12 @@ GRANT ALL PRIVILEGES ON STREAMING.* TO 'streaming_admin'@'localhost';
 
 FLUSH PRIVILEGES;
 
-
 -- =====================================================================
 -- 6.3.3 CONFERÊNCIA DOS PRIVILÉGIOS CONCEDIDOS
 -- =====================================================================
 SHOW GRANTS FOR 'streaming_consulta'@'localhost';
 SHOW GRANTS FOR 'streaming_operador'@'localhost';
 SHOW GRANTS FOR 'streaming_admin'@'localhost';
-
-SELECT user, host, account_locked, password_expired
-  FROM mysql.user
- WHERE user LIKE 'streaming_%'
- ORDER BY user;
 
 -- Exclusão de um dos usuários criados.
 
@@ -1583,9 +1291,9 @@ DROP USER 'streaming_admin'@'localhost';
 
 -- Conferência: a conta não deve mais aparecer na lista.
 SELECT user, host
-  FROM mysql.user
- WHERE user LIKE 'streaming_%'
- ORDER BY user;
+FROM mysql.user
+WHERE user LIKE 'streaming_%'
+ORDER BY user;
 
 -- Revogação de privilégios de dois usuários
 
@@ -1607,37 +1315,19 @@ FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'streaming_consulta'@'localhost';
 SHOW GRANTS FOR 'streaming_operador'@'localhost';
 
-
--- =====================================================================
--- 6.3.6 COMO TESTAR OS ACESSOS (executar no terminal, não neste script)
--- =====================================================================
--- Como o script roda sempre como root, os testes abaixo devem ser
--- executados em um terminal à parte, um comando por vez:
---
---   mysql -u streaming_consulta -p'Consulta@2025' --protocol=tcp -e "USE STREAMING; SELECT COUNT(*) FROM VW_CATALOGO_DETALHADO;"
---   mysql -u streaming_consulta -p'Consulta@2025' --protocol=tcp -e "USE STREAMING; SELECT COUNT(*) FROM VW_DESEMPENHO_CONTEUDO;"   -- deve falhar: SELECT revogado
---   mysql -u streaming_consulta -p'Consulta@2025' --protocol=tcp -e "USE STREAMING; SELECT COUNT(*) FROM USUARIO;"                 -- deve falhar: sem acesso à tabela
---   mysql -u streaming_operador -p'Operador@2025' --protocol=tcp -e "USE STREAMING; UPDATE PLANO SET DESCRICAO = DESCRICAO WHERE CODIGO = 1;"
---   mysql -u streaming_operador -p'Operador@2025' --protocol=tcp -e "USE STREAMING; DELETE FROM AVALIACAO WHERE CODIGO = 1;"         -- deve falhar: DELETE revogado
---   mysql -u streaming_admin   -p'Admin@2025'    -- deve falhar: usuário excluído
---
--- Em clientes MySQL 8 que não usam SSL, pode ser necessário acrescentar
--- --get-server-public-key nos comandos acima.
-
 -- Exemplo de uso dos comandos:
 -- COMMIT
 
 -- 1 = ligado: cada comando fora de transação explícita é confirmado.
 SELECT @@autocommit AS AUTOCOMMIT;
 
-
 -- =====================================================================
 -- 6.4.1 EXEMPLO 1 — COMMIT (a alteração passa a valer de forma definitiva)
 -- =====================================================================
 -- Objetivo: inserir um registro de exibição e confirmar com COMMIT. O
 -- registro continua existindo depois do fim da transação.
--- O valor 'TESTE_COMMIT' em ORIGEM_ACESSO identifica a linha de teste
--- para que o Exemplo 4 possa removê-la no final.
+-- O valor 'TESTE_COMMIT' em ORIGEM_ACESSO identifica a linha de teste,
+-- que é removida ao final deste exemplo para não deixar resíduo.
 START TRANSACTION;
 
 INSERT INTO HISTORICO_VISUALIZACAO
@@ -1648,16 +1338,27 @@ VALUES (1, 30, NOW(), DATE_ADD(NOW(), INTERVAL 45 MINUTE),
 
 -- Ainda dentro da transação: a linha já é visível para esta sessão.
 SELECT 'DENTRO DA TRANSAÇÃO' AS MOMENTO, CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO
-  FROM HISTORICO_VISUALIZACAO
- WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
+FROM HISTORICO_VISUALIZACAO
+WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
 
 -- Confirma a transação.
 COMMIT;
 
 -- Depois do COMMIT: a linha continua lá (foi gravada em definitivo).
 SELECT 'APÓS O COMMIT' AS MOMENTO, CODIGO, CODIGO_PERFIL, CODIGO_CONTEUDO
-  FROM HISTORICO_VISUALIZACAO
- WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
+FROM HISTORICO_VISUALIZACAO
+WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
+
+-- Limpeza do registro de teste, também confirmada com COMMIT:
+START TRANSACTION;
+
+DELETE FROM HISTORICO_VISUALIZACAO WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
+
+COMMIT;
+
+SELECT 'APÓS A LIMPEZA' AS MOMENTO, COUNT(*) AS REGISTROS
+FROM HISTORICO_VISUALIZACAO
+WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
 
 -- ROLLBACK
 
@@ -1683,47 +1384,3 @@ ROLLBACK;
 
 SELECT 'APÓS O ROLLBACK' AS MOMENTO, CODIGO, PRECO FROM PLANO WHERE CODIGO = 7;
 SELECT 'APÓS O ROLLBACK' AS MOMENTO, COUNT(*) AS ITENS_MINHA_LISTA FROM MINHA_LISTA;
-
-
--- =====================================================================
--- 6.4.3 EXEMPLO 3 — SAVEPOINT (rollback parcial)
--- =====================================================================
--- O SAVEPOINT marca um ponto intermediário: é possível desfazer só o que
--- veio depois dele, mantendo o que foi feito antes.
--- Aqui o reajuste do plano 7 é mantido e o do plano 8 é desfeito; no
--- final, um ROLLBACK geral descarta a transação inteira, inclusive o 7.
-START TRANSACTION;
-
-UPDATE PLANO SET PRECO = 59.90 WHERE CODIGO = 7;
-SAVEPOINT APOS_REAJUSTE_7;
-
-UPDATE PLANO SET PRECO = 149.90 WHERE CODIGO = 8;
-
-SELECT 'APÓS OS DOIS AJUSTES' AS MOMENTO, CODIGO, PRECO
-  FROM PLANO WHERE CODIGO IN (7, 8) ORDER BY CODIGO;
-
-ROLLBACK TO SAVEPOINT APOS_REAJUSTE_7;
-
-SELECT 'APÓS ROLLBACK PARCIAL' AS MOMENTO, CODIGO, PRECO
-  FROM PLANO WHERE CODIGO IN (7, 8) ORDER BY CODIGO;
-
-ROLLBACK;
-
-SELECT 'APÓS ROLLBACK TOTAL' AS MOMENTO, CODIGO, PRECO
-  FROM PLANO WHERE CODIGO IN (7, 8) ORDER BY CODIGO;
-
-
--- =====================================================================
--- 6.4.4 EXEMPLO 4 — LIMPEZA DO TESTE (outro COMMIT)
--- =====================================================================
--- Remove a linha inserida no Exemplo 1 e confirma a limpeza, devolvendo
--- o banco ao estado em que estava antes deste arquivo.
-START TRANSACTION;
-
-DELETE FROM HISTORICO_VISUALIZACAO WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
-
-COMMIT;
-
-SELECT 'APÓS A LIMPEZA' AS MOMENTO, COUNT(*) AS REGISTROS
-  FROM HISTORICO_VISUALIZACAO
- WHERE ORIGEM_ACESSO = 'TESTE_COMMIT';
